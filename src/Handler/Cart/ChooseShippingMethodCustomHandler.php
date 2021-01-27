@@ -41,7 +41,6 @@ final class ChooseShippingMethodCustomHandler
         call_user_func($this->chooseShippingMethodHandler, $chooseShippingMethod);
         $cart = $this->orderRepository->findOneBy(['tokenValue' => $chooseShippingMethod->orderToken()]);
         /** @var Shipment $shipment */
-        dd($cart->getShipments()->toArray());
         $shipment = $cart->getShipments()[$chooseShippingMethod->shipmentIdentifier()];
         if (!empty($chooseShippingMethod->getDeliveryDate())) {
             $shipment->setDeliveryDate($chooseShippingMethod->getDeliveryDate());
