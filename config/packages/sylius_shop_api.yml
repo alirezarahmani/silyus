@@ -1,0 +1,3 @@
+sylius_shop_api:
+    request_classes:
+        choose_shipping_method: \App\Handler\Cart\ChooseShippingMethodRequest
